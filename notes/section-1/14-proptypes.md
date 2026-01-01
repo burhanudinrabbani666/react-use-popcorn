@@ -1,0 +1,3 @@
+## Proptypes
+
+Just using typescript
