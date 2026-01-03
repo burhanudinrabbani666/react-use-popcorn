@@ -32,6 +32,6 @@ createRoot(document.getElementById("root")).render(
     />
     <Test />
 
-    <Challenge />
+    {/* <Challenge /> */}
   </StrictMode>
 );
