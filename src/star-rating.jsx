@@ -6,7 +6,7 @@ const containerStyle = {
   gap: "16px",
 };
 
-const starConitenrStyle = {
+const starContainerStyle = {
   display: "flex",
 };
 
@@ -36,7 +36,7 @@ export default function StarRating({
 
   return (
     <div style={containerStyle} className={className}>
-      <div style={starConitenrStyle}>
+      <div style={starContainerStyle}>
         {Array.from({ length: maxRating }, (_, index) => {
           return (
             <Star
