@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const tempMovieData = [
   {
@@ -50,16 +50,9 @@ const tempWatchedData = [
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
-const KEY = `d17a4b2f`;
-
 export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
   const [watched, setWatched] = useState(tempWatchedData);
-
-  useEffect;
-  fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=harry potter`)
-    .then((res) => res.json())
-    .then((data) => console.log(data));
 
   return (
     <>
