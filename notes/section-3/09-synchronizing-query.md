@@ -57,4 +57,4 @@ function Search({ query, setQuery }) {
 }
 ```
 
-[Next: Loading movie detailsP](./11-loading-movie-details.md)
+[Next: Loading movie detailsP](./10-selecting-movie.md.md)
