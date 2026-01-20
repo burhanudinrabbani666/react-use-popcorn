@@ -45,6 +45,21 @@ export function MovieDetails({
     onCloseMovie();
   }
 
+  useEffect(() => {
+    function callback(event) {
+      if (event.code === `Escape`) {
+        onCloseMovie();
+      }
+    }
+
+    document.addEventListener("keydown", callback);
+
+    // Remove event listener - Clean up.
+    return function () {
+      document.removeEventListener("keydown", callback);
+    };
+  }, [onCloseMovie]);
+
   useEffect(
     function () {
       async function getMovieDetail() {

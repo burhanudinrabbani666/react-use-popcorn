@@ -60,7 +60,7 @@ export const Average = (arr) =>
 export const KEY = `d17a4b2f`;
 
 export default function App() {
-  const [query, setQuery] = useState("naruto");
+  const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -106,9 +106,8 @@ export default function App() {
         setMovies(() => data.Search);
         setError("");
       } catch (error) {
-        console.error(error.message);
-
         if (error.name !== "AbortError") {
+          console.error(error.message);
           setError(error.message);
         }
       } finally {
@@ -122,6 +121,7 @@ export default function App() {
       return;
     }
 
+    handleCloseMovie();
     fetchMovies();
 
     return function () {
