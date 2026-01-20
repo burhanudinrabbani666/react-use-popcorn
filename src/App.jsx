@@ -67,22 +67,6 @@ export default function App() {
   const [error, setError] = useState("");
   const [selectedId, setSelectedId] = useState(null);
 
-  /*
-  useEffect(() => {
-    console.log(`After initial render`);
-  }, []);
-
-  useEffect(() => {
-    console.log(`After every render`);
-  });
-
-  useEffect(() => {
-    console.log(`D`);
-  }, [query]);
-
-  console.log("During Render");
-*/
-
   function handleSelectedMovie(id) {
     setSelectedId((selectedId) => (id === selectedId ? null : id));
   }
@@ -95,42 +79,43 @@ export default function App() {
     setWatched((watched) => [...watched, movie]);
   }
 
-  useEffect(
-    function () {
-      async function fetchMovies() {
-        try {
-          setIsLoading(true);
-          setError("");
-          const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
-          );
+  function handleDeleteWatched(id) {
+    setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
+  }
 
-          // Checking for internet connection
-          if (!res.ok) throw new Error("something wrong from fetching movies");
-
-          const data = await res.json();
-
-          // Checking if movie is exist
-          if (data.Response === "False") throw new Error("movie not found");
-
-          setMovies(() => data.Search);
-        } catch (error) {
-          setError(error.message);
-        } finally {
-          setIsLoading(false);
-        }
-      }
-
-      if (query.length < 3) {
-        setMovies([]);
+  useEffect(() => {
+    async function fetchMovies() {
+      try {
+        setIsLoading(true);
         setError("");
-        return;
-      }
+        const res = await fetch(
+          `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+        );
 
-      fetchMovies();
-    },
-    [query],
-  );
+        // Checking for internet connection
+        if (!res.ok) throw new Error("something wrong from fetching movies");
+
+        const data = await res.json();
+
+        // Checking if movie is exist
+        if (data.Response === "False") throw new Error("movie not found");
+
+        setMovies(() => data.Search);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    if (query.length < 3) {
+      setMovies([]);
+      setError("");
+      return;
+    }
+
+    fetchMovies();
+  }, [query]);
 
   return (
     <>
@@ -152,11 +137,15 @@ export default function App() {
               onCloseMovie={handleCloseMovie}
               selectedId={selectedId}
               onAddWatched={handleAddWatch}
+              watched={watched}
             />
           ) : (
             <>
               <WatchSummary watched={watched} />
-              <WatchedMovieList watched={watched} />
+              <WatchedMovieList
+                watched={watched}
+                onDelete={handleDeleteWatched}
+              />
             </>
           )}{" "}
         </Box>
