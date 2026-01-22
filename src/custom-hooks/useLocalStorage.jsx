@@ -1,6 +1,3 @@
-# CREATING USELOCALSTORGAE CUSTOM HOOKS
-
-```jsx
 import { useState, useEffect } from "react";
 
 export function useLocalStorage(initialState, key) {
@@ -17,6 +14,3 @@ export function useLocalStorage(initialState, key) {
 
   return [value, setValue];
 }
-```
-
-[Next: Creating usekey](./13-creating-usekey.md)
