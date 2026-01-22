@@ -1,6 +1,3 @@
-# CREATING USEKEY
-
-```jsx
 import { useEffect } from "react";
 
 export function useKey(key, action) {
@@ -19,4 +16,3 @@ export function useKey(key, action) {
     };
   }, [action, key]);
 }
-```
