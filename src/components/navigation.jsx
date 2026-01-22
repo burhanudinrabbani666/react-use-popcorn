@@ -15,6 +15,7 @@ export function Search({ query, setQuery }) {
     function callback(event) {
       if (document.activeElement === inputElement.current) return;
 
+      // Soon when user CTRL + K, not Enter key like in tutorial
       if (event.ctrlKey && event.key === "k") {
         event.preventDefault();
         inputElement.current.focus();
@@ -26,13 +27,6 @@ export function Search({ query, setQuery }) {
     document.addEventListener("keydown", callback);
     return () => document.addEventListener("keydown", callback);
   }, [setQuery]);
-
-  // NOT REACT WAY 🫸
-  // useEffect(() => {
-  //   const searchFieldsElement = document.querySelector(".search");
-  //   console.log(searchFieldsElement);
-  //   searchFieldsElement.focus();
-  // }, []);
 
   return (
     <input
