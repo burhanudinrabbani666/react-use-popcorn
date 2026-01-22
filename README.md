@@ -1,22 +1,67 @@
-# 🍿 Use Popcorn
+<h1 align="center">🍿 Use Popcorn </h1>
 
-This is a Udemy project from the React: []() course. **Use Popcorn** is a simple movie rating application. The topics covered in this repository cover intermediate material for React developers, such as prototypes and composition. This project was built using modern project standards, such as Bun and Vite, but does not yet use Typescript. This repository is for educational purposes only.
+Use Popcorn is a project from the Udemy course **"The Ultimate React Course"**. It’s a movie search and rating app designed to practice **intermediate React concepts**, with a strong focus on component composition, hooks, and real-world state management patterns.
 
-All material covered in the lesson is stored in a **notes** folder, which is continuously updated as I revisit this material and review the lessons.
+This repository is for educational purposes only. All learning materials and personal takeaways are stored in the `notes/` folder, which I continuously update while revisiting the course.
 
-Keep up the good work 🔥🔥🔥.
+Keep up the good work 🔥🔥🔥
 
-## 📝 Things I learned
+# Features
 
-- Prop composition and prototypes.
+- 🔍 Search for your favorite movies
+- ⭐ Rate movies easily
+- 💾 Your rated movies are saved automatically using localStorage
+- ⚡ Fast development setup with Vite and Bun
 
-## Notes
+## Things I learned
+
+- Component composition and prop drilling vs composition
+- Thinking in React (splitting UI into reusable components)
+- `useEffect`, `useRef`, and advanced state patterns
+- Building and reusing custom hooks
+- Persisting state with localStorage
+- Fetching and managing external data
+
+## Tech Stack
+
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+- ![Bun](https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white)
+- ![CSS](https://img.shields.io/badge/css-%23663399.svg?style=for-the-badge&logo=css&logoColor=white)
+
+## Notes folder
 
 - [Thinking in React](./notes/section-1/01-how-to-split-ui.md)
-- [How React works behind the scenes](./notes/section-2/01-compenents-instance-element.md)
+- How React works behind the scenes
 - [Effects and Data fetching](./notes/section-3/)
 - [Custom Hooks, refs, and more state](./notes/section-4/)
 
-### screenshot form project
+## screenshot form project
 
-## Thanks
+![usepopcorn](./public/usepopcorn.png)
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+bun install
+
+
+# Start development server
+bun run dev
+```
+
+## Acknowledgments
+
+- Jonas Schmedtmann – The Ultimate React Course
+- Udemy platform
+
+## 🙌 Thanks
+
+Special thanks to:
+
+- Jonas Schmedtmann for creating such a high-quality and well-structured React course
+- Udemy for providing the learning platform
+- The React community for excellent documentation and open-source resources
+
+This project exists thanks to the knowledge shared by the community ❤️
