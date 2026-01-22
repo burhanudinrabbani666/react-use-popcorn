@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { KEY, Loader } from "../App";
+import { Loader } from "../App";
 import { StarRating } from "./star-rating";
+import { KEY } from "../config/config";
 
 export function MovieDetails({
   selectedId,

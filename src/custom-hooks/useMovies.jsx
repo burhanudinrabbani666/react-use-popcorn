@@ -1,13 +1,3 @@
-# CREATING CUSTOM HOOKS
-
-Creating reusable custom hooks for fetching movies.
-
-```jsx
-// App.jsx
-const { movies, isLoading, error } = useMovies(query); // custom Hooks
-
-// useMovie.jsx
-
 import { useState, useEffect } from "react";
 import { KEY } from "../config/config";
 
@@ -65,6 +55,3 @@ export function useMovies(query) {
 
   return { movies, error, isLoading };
 }
-```
-
-[Next: Creating usingLocalStorageState](./12-creating-usingLocalStorageState.md)
